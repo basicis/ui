@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;  
+    box-sizing: border-box !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+}
+  
+body{
+    padding: 0;
+    margin: 0;  
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: $font !important;
+    color: $primary;
+}
+
+a , p{
+    font-family: $font;
+    color: $black3;
+    font-weight: lighter;
+    text-decoration: none;
+    margin: 5px;
+}
+
+b, small, strong, .destak{
+    color: $primary !important;
+    font-weight: normal;
+}
+
+
+.destak:hover, a:hover{
+    text-decoration: underline !important;
+}
+

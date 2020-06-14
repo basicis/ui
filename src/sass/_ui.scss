@@ -1,0 +1,22 @@
+//importing Basicis Ui scss 
+@import "./_bootstrap.scss";
+@import "./efects.scss";
+@import "./flex.scss";
+@import "./html.scss";
+@import "./dashboard.scss";
+@import "./outhers.scss";
+@import "./box.scss";
+@import "./btn.scss";
+@import "./footer.scss";
+@import "./form.scss";
+@import "./navbar.scss";
+@import "./sidebar.scss";
+@import "./page.scss";
+@import "./dark.scss";
+
+
+.ui-page-section > #contributors.row {
+    @extend .flex-row, .flex-items-center;
+    justify-content: center !important;
+}
+

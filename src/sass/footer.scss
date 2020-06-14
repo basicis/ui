@@ -1,0 +1,55 @@
+//ui-footer
+.ui-footer {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    min-height: 30px;
+    background: #ccc;
+    padding: 40px auto !important;
+    flex-direction: column-reverse;
+    position: relative !important;
+    margin: 40px 0px;
+
+    &-left, &-right{
+        display: flex;
+        width: 100%;
+        min-width: 40%;
+        flex-direction: row !important;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        padding: 0;
+        @media screen and (min-width: $md ) {font-size: 12px;}
+        @media screen and (min-width: $lg ) {font-size: 14px;}
+        
+
+        img{
+            width: 10px;
+            margin-right: 5px;
+        }
+
+        @media screen and (min-width: $md ) {
+            img{
+                width: 12px;
+            }
+        }
+
+        @media screen and (min-width: $lg ) {
+            img{
+                width: 14px;
+            }
+        }
+
+        a{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+
+
+}
