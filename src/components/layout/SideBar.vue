@@ -6,7 +6,7 @@
     </div>    
 
     <div class="ui-brand" >
-        <img src="/assets/img/default/md-logo2.png"/> 
+        <img :src="logo"/> 
         <h1>{{description}}</h1>
     </div>
 
@@ -79,7 +79,8 @@ export default {
     name:'SideBar',
     data: function(){
         return {
-            description: 'Basicis UI'
+            description: 'Basicis UI',
+            logo: require('./../../assets/logo.svg')
         }
     }
 }

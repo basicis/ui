@@ -8,29 +8,29 @@
             
             <div class="ui-box-header">
                 <img src="/assets/img/default/md-logo2.png">
-                <h1 class="text-center"><b>{{description}}</b></h1>  <p>Login</p>
+                <h1 class="text-center"><b>Basicis UI</b></h1>  <p>Login</p>
             </div>
          
 
             <div class="ui-box-content" >
             
 
-                <div v-if="log.msg" :class="'alert alert-'.log.class == 'error' ? 'danger' : log.class">
-                    <p>{{log.msg}}</p>
+                <div class="'alert alert-danger">
+                    <p>Login Error!</p>
                 </div>
   
                 <form class="ui-form" method="POST" action="/login">
 
                     <div class="ui-form-group">
                         <label for="username">Username</label>
-                        <input :class="errors.username ? errors.username.class : ''"  placeholder="@username" type="text" name="username" value=""/>
-                        <p v-if="errors.username" class="error-msg" >{{errors.username.msg}}</p>   
+                        <input class=""  placeholder="@username" type="text" name="username" value=""/>
+                        <p class="error-msg" >Username error!</p>   
                     </div>
 
                     <div class="ui-form-group">
                         <label for="pass">Pass</label>
-                        <input :class="errors.pass.class ? errors.pass.class : ''" placeholder="******"  type="password" name="pass" />
-                        <p v-if="errors.pass" class="error-msg" >{{errors.pass.msg }}</p>
+                        <input class="" placeholder="******"  type="password" name="pass" />
+                        <p v-if="errors.pass" class="error-msg" >Password error!</p>
                     </div>
 
 

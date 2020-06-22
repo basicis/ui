@@ -17,12 +17,6 @@
     box-sizing: border-box !important;
     background-color: $white;
 
-    @media screen and (min-width: #{$lg}){
-         box-shadow: 1px 1px 5px $black2;
-         width: calc(95%) !important;
-         margin: 20px auto !important;
-    }
-
     .row{
         @extend .container-fluid;
         margin: 0 !important;

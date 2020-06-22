@@ -149,6 +149,10 @@ let jqueryReady  = function() {
         copyClipboard( $(event.target) )
     })
 
+    $('.ui-sidebar>.menu.item').click(function(event){
+        console.log('Click ui-sidebar.menu.item: ', event)
+    })
+
 
 
 
@@ -177,3 +181,4 @@ let jqueryReady  = function() {
 
 $(document).ready(jqueryReady);
 
+export default {jqueryReady:jqueryReady, jquery:$}

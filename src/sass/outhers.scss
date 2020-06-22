@@ -11,6 +11,7 @@
 
 
 .ui-tag {
+    @extend .shabow-morphism;
     position: relative;
     background: #ccc;
     color: $black;
@@ -92,9 +93,10 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-   @extend .ui-center;
-   overflow-y: scroll !important;
-   padding: 20px;
+    @extend .ui-center;
+    overflow-y: scroll !important;
+    padding: 20px;
+    @include scrollbar( transparent , transparent, transparent, 1px );
 }
 
 .alert{
@@ -221,3 +223,9 @@
     }
 
 }
+
+.shabow-morphism{
+    box-shadow:  2px 2px 2px rgba($black2, .2), 
+                 -2px -2px 2px rgba( $black2, .2) !important;
+}
+

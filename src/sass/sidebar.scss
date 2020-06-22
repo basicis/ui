@@ -1,24 +1,39 @@
 .ui-sidebar {
-
+    //display: none;
     padding: 0 !important;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0px;
-    z-index: 10;
+    z-index: 100 !important;
     background: $light2;
     height: 100vh !important;
+    width: 300px;
+    & , & > * {
+        user-select: none !important;
+    }
 
 
     @media screen and (min-width: $lg) {
-        position: relative !important;
-        height: 100vh !important;
+        //position: relative !important;
+        //height: 100vh !important;
+        //width: 25% !important;
     }
 
 
     .ui-brand{
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
         width: 100%;
-        h1{color:  $white }
-        img{display: none;}
+        h1{
+            color: $white;
+            margin: 0 !important;
+            font-size: 25px;
+         }
+        img{
+            width: 60px;
+            height: 60px;
+        }
         margin-bottom: 80px;
         padding: 20px 0px;
         @media screen and (max-width: #{$lg} ) {margin: 0px !important;}
@@ -65,6 +80,7 @@
 
              &:hover {
                  background: $black2;
+                 background: rgba($white2, .1);
                  a, svg{
                     color: $white !important;
                     text-decoration: none !important;
@@ -72,7 +88,9 @@
              }
 
              & ~ .active{
-                 background: $primary;
+                @extend .shabow-morphism;
+                background: rgba($primary, .7);
+                opacity: 100 !important;
                  a, svg{
                     color: $white !important;
                 } 
@@ -115,6 +133,7 @@
             }
 
             &-header{
+                width: 100% !important;
                 display: flex;
                 flex-direction: row;
                 @extend .item;

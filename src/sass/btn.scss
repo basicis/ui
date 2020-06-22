@@ -1,4 +1,5 @@
 .ui-btn {
+    @extend .shabow-morphism;
     position: relative;
     min-width: 100px;
     max-width: 200px;

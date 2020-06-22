@@ -1,9 +1,8 @@
+import DashboardLayout from './components/layout/DashboardLayout'
 import Home from './components/Home'
-import Login from './components/Login'
-import Dashboard from './components/Dashboard'
 
 let router = {
-    mode: 'hash',
+    mode: 'history',
     routes:[
 
         {
@@ -13,13 +12,19 @@ let router = {
 
         {
             path: "/login",
-            component: Login,
+            props: {
+                page: 'login'
+            },
+            component: DashboardLayout,
         },
 
         {
             path: "/dashboard",
             alias: '/dash',
-            component: Dashboard,
+            props: {
+                page: 'dashboard'
+            },
+            component: DashboardLayout,
         },
     ]
 }

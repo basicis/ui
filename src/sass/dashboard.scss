@@ -1,5 +1,6 @@
 .ui-dashboard {
-    border: solid 1px red;
+    display: flex;
+    flex-direction: column !important;
     box-sizing: border-box !important;
     position: relative !important;
     @extend  .row;
@@ -14,7 +15,6 @@
         min-height: 100vh !important;
         box-shadow: none !important;
     }
-
 
     &-left {
         position: absolute;
@@ -38,7 +38,7 @@
 
     &-right{
         position: relative !important;
-        width: 100% ;
+        width: 100% !important;
     }
     
 
@@ -47,9 +47,8 @@
 
 
 .ui-main{
-
-    height: calc(100vh - 103px) !important;
-    width: 100% !important;
+    height: calc(100vh - 80px) !important;
+    width: 100vw !important;
     background: #ccc;
     overflow-y: scroll !important;
     @include scrollbar( $primary, $primary, $black2, 5px );
@@ -58,6 +57,7 @@
     padding-bottom: 100px !important;
     box-sizing: border-box !important;
     box-shadow: none !important;
+    
 
     .container{
         @extend .ui-center;
