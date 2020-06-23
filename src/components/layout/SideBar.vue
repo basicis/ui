@@ -1,73 +1,38 @@
 <template>
 <div id="sidebar" class="ui-sidebar">
 
-    <div onclick="$('.ui-sidebar#sidebar').slideToggle()"  class="ui-sidebar-close" >
-        <i class="fas fa-chevron-left"></i>
-    </div>    
-
     <div class="ui-brand" >
         <img :src="logo"/> 
         <h1>{{description}}</h1>
     </div>
 
-
     <ul class="menu">
 
+        <li v-for="(item, key) in menu" v-bind:key="key" class="item" 
+        v-bind:class="[item.hasOwnProperty('list') ? 'ui-dropdown' : '',item.active ? 'active' : '']" 
+        @click.prevent="setActive($event)"
+        >
 
-        <li class="item">
-            <i class="fas fa-home"></i>
-            <a href="#">Home</a>
-        </li>
+            <template  v-if="item.hasOwnProperty('list') === false" >
+                <fontawesome v-bind:icon="item.icon"/>
+                <a v-bind:href="item.link">{{item.text}}</a>
+            </template>
 
-        <li class="item active" >
-            <i class="fas fa-tachometer-alt"></i>
-            <a href="#">Dashboard</a>
-        </li>
+             <template v-else >
+                <div  class="ui-dropdown-header">
+                    <fontawesome v-bind:icon="item.icon"/>
+                    <a v-bind:href="'#ui-dropdown-menu-'+item.icon">{{item.text}}</a>
+                </div>
 
-        <li class="item ui-dropdown" >
+                <ul v-bind:id="'ui-dropdown-menu-'+item.icon" class="ui-dropdown-menu" >
+                    <li v-for="(subitem, skey) in item.list"  v-bind:key="skey" class="ui-dropdown-item">
+                        <fontawesome v-bind:icon="subitem.icon"/>
+                        <a href="#">{{subitem.text}}</a>
+                    </li> 
+                </ul>
 
-            <div class="ui-dropdown-header">
-                <i class="fas fa-users"></i>
-                <a href="#ui-dropdown-menu-users">Users</a>
-            </div>
+             </template>
 
-
-            <ul id="ui-dropdown-menu-users" class="ui-dropdown-menu" >
-                <li class="ui-dropdown-item">
-                    <i class="fas fa-plus"></i>
-                    <a href="#">New</a>
-                </li>
-
-                <li class="ui-dropdown-item">
-                    <i class="fas fa-list"></i>
-                    <a href="#">List</a>
-                </li>
-
-            </ul>
-
-        </li>
-
-
-        <li class="item ui-dropdown">
-
-            <div class="ui-dropdown-header">
-                <i class="fas fa-cogs"></i>
-                <a href="#ui-dropdown-menu-settings">Settings</a>
-            </div>
-
-
-            <ul id="ui-dropdown-menu-settings" class="ui-dropdown-menu" >
-                <li class="ui-dropdown-item">
-                    <i class="fas fa-plus"></i>
-                    <a href="#">App Settings</a>
-                </li>
-
-                <li class="ui-dropdown-item">
-                    <i class="fas fa-list"></i>
-                    <a href="#">Api Settings</a>
-                </li>
-
-            </ul>
         </li>
 
     </ul>    
@@ -77,10 +42,24 @@
 <script>
 export default {
     name:'SideBar',
-    data: function(){
-        return {
-            description: 'Basicis UI',
-            logo: require('./../../assets/logo.svg')
+    props:{
+        description: {
+            type: String,
+            default: 'Basicis UI',
+        },
+        logo:{
+            type: String,
+            default: require('./../../assets/logo.svg')
+        },
+        menu: {
+            type: Array,
+            default: []
+        }
+    },
+    methods: {
+        setActive(event){
+            event.path[2].classList.add('active')
+            console.log(document.querySelector('ui-sidebar'))
         }
     }
 }

@@ -13,16 +13,13 @@
 </div>
 </template>
 <script>
-import ui from './../../utils/ui.js'
 export default {
     name: "FootBar",
-    data: function(){
-        return {
-            description: 'Basicis UI'
+    props:{
+        description: {
+            type: String,
+            default: 'Basicis UI'
         }
     },
-    mounted(){
-        ui.jquery.ready(ui.jqueryReady)
-    }
 }
 </script>

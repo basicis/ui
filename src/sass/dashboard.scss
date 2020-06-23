@@ -47,6 +47,7 @@
 
 
 .ui-main{
+    @extend .col, .col-lg-9, .offset-lg-3;
     height: calc(100vh - 80px) !important;
     width: 100vw !important;
     background: #ccc;

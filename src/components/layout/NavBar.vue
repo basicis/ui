@@ -7,10 +7,8 @@
         <div class="ui-navbar-header-left">
             
             <ul>
-                <li onclick="$('.ui-sidebar#sidebar').slideToggle('slow')" > <i class="fa fa-bars"></i> </li>
-                <li class="item" > <a href="#">Dashboard</a></li>
-                <li  class="item" > <a href="#">Users</a></li>
-                <li  class="item" > <a href="#">Settings</a></li>
+                <li class="ui-sidebar-toggle" > <fontawesome  icon="bars" /> </li>
+                <li v-for="(item, key) in menuLeft" v-bind:key="key" class="item" > <a v-bind:href="item.link">{{item.text}}</a></li>
             </ul>
 
         </div>
@@ -22,22 +20,22 @@
             <ul>
                 <li class=""> <i class="far fa-moon"></i> </li>
                 <li class="item" > 
-                    <i class="far fa-bell"></i> 
+                    <fontawesome icon="bell"/> 
                     <span class="ui-tag-error">5</span>
                 </li>
 
                 <li  class="item" >
-                    <i class="fas fa-list-ul"></i>
+                    <fontawesome icon="list-ul"/>
                     <span class="ui-tag-warning">5</span>
                 </li>
 
                 <li  class="item" >
-                    <i class="far fa-envelope"></i>
+                    <fontawesome icon="envelope"/>
                     <span class="ui-tag-info">70</span>
                 </li>
 
                 <li  class="" > <img src="img/avatar.png" > </li>
-                <li  class="" > <i class="fas fa-ellipsis-h"></i> </li>
+                <li  class="" > <fontawesome icon="ellipsis-h"/> </li>
             </ul>
 
         </div>
@@ -53,7 +51,27 @@
 </div>
 </template>
 <script>
+import $ from 'jquery' 
 export default {
-    name:'NavBar'
+    name:'NavBar',
+    props:{
+        description: {
+            type: String,
+            default: 'Basicis UI'
+        },
+        menuLeft:{
+            type: Array,
+            default: []
+        },
+         menuRight:{
+            type: Array,
+            default: []
+        }
+    },
+    methods:{
+        toggleSideBar(){
+
+        },
+    }
 }
 </script>

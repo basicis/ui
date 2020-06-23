@@ -130,8 +130,22 @@ let jqueryReady  = function() {
 
 
     $('.ui-sidebar-toggle').click(function(){
-        sidebar.toggle("fast")
-        normalizeLayout()
+        //.col-lg-9, .offset-lg-3
+        $('.ui-sidebar').toggle('fast')
+        console.log($('#sidebar').is(':visible'))
+
+        if( !$('.ui-sidebar').is(':visible')) {
+            $('.ui-navbar').removeClass('col-lg-9')
+            $('.ui-navbar').removeClass('offset-lg-3')
+            $('.ui-main').removeClass('col-lg-9')
+            $('.ui-main').removeClass('offset-lg-3')
+        }else{
+            $('.ui-navbar').addClass('col-lg-9')
+            $('.ui-navbar').addClass('offset-lg-3')
+            $('.ui-main').addClass('col-lg-9')
+            $('.ui-main').addClass('offset-lg-3')
+        }
+        //normalizeLayout()
     })
 
 
@@ -153,7 +167,9 @@ let jqueryReady  = function() {
         console.log('Click ui-sidebar.menu.item: ', event)
     })
 
-
+    $('.ui-main').click(function(event){
+        $('.ui-sidebar').hide()
+    })
 
 
     $(this).mouseup(e => {
@@ -177,7 +193,6 @@ let jqueryReady  = function() {
     
 
 }
-
 
 $(document).ready(jqueryReady);
 
