@@ -1,5 +1,7 @@
 import UI from './components/layout/UI'
 import Home from './components/Home'
+import NotFound from './components/NotFound'
+
 
 let router = {
     mode: 'history',
@@ -8,6 +10,18 @@ let router = {
         {
             path: "/",
             component: Home,
+        },
+
+        {
+            path: "*",
+            component: NotFound,
+            props:{
+                btn: {
+                    text: 'Back to Home',
+                    link:'/',
+                },
+                msg: 'Page not Found!'
+            }
         },
 
         {

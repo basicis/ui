@@ -46,12 +46,12 @@ export default {
        page: String
      },
      components:{
-        SideBar,
-        NavBar,
-        FootBar,
         Dashboard,
         Login,
         Form,
+        SideBar,
+        NavBar,
+        FootBar,
      },
      data : function (){
        return {

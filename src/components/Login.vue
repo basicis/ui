@@ -11,12 +11,7 @@
          
 
             <div class="ui-box-content" >
-            
-
-                <div class="'alert alert-danger">
-                    <p>Login Error!</p>
-                </div>
-  
+ 
                 <form class="ui-form" method="POST" action="/login">
 
                     <div class="ui-form-group">
