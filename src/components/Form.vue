@@ -5,29 +5,28 @@
 
             
             <div class="ui-box-header">
-                <img src="/assets/img/default/md-logo2.png">
-                <h1 class="text-center"><b>Basicis UI</b></h1>  <p>Login</p>
+                <h1 class="text-center"><b>Form</b></h1>  <p>My form</p>
             </div>
          
 
             <div class="ui-box-content" >
-            
-
-                <div class="'alert alert-danger">
-                    <p>Login Error!</p>
-                </div>
   
                 <form class="ui-form" method="POST" action="/login">
 
                     <div class="ui-form-group">
-                        <label for="username">Username</label>
-                        <input class=""  placeholder="@username" type="text" name="username" value=""/>
-                        <p class="error-msg" >Username error!</p>   
+                        <label for="username">Text</label>
+                        <input class=""  placeholder="Your Text Here!" type="text" name="mytext" value=""/>
+                        <p class="error-msg" >mytext error!</p>   
                     </div>
 
                     <div class="ui-form-group">
                         <label for="pass">Pass</label>
-                        <input class="" placeholder="******"  type="password" name="pass" />
+                       <select class="ui-sidebar">
+                            <option value="" >Select one Option</option>
+                            <option value="1" >Option 1</option>
+                            <option value="2" >Option 1</option>
+                            <option value="3" >Option 1</option>
+                       </select>
                         <p v-if="errors.pass" class="error-msg" >Password error!</p>
                     </div>
 
@@ -63,7 +62,7 @@
 </template>
 <script>
 export default {
-    name: 'Login',
+    name: 'Form',
     data: function(){
         return{
             description: "Basicis UI",

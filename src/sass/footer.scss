@@ -1,17 +1,15 @@
 //ui-footer
 .ui-footer {
+    @extend .col;
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    min-height: 30px;
     background: #ccc;
-    padding: 40px auto !important;
     flex-direction: column-reverse;
-    position: relative !important;
-    margin: 40px 0px;
-
+    margin: 0px;
+    padding: 20px 0px;
+    float: right !important;
 
     &-left, &-right{
         display: flex;
@@ -20,12 +18,11 @@
         flex-direction: row !important;
         justify-content: center;
         align-items: center;
-        font-size: 10px;
+        font-size: 9px;
         padding: 0;
         @media screen and (min-width: $md ) {font-size: 12px;}
         @media screen and (min-width: $lg ) {font-size: 14px;}
-        
-
+    
         img{
             width: 10px;
             margin-right: 5px;

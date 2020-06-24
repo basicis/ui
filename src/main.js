@@ -4,7 +4,7 @@ import Router from './router'
 import App from './App.vue'
 import FontAwesomeIcon  from  './utils/icons'
 import './sass/_ui.scss'
-import './utils/ui.js'
+//import './utils/ui.js'
 
 
 Vue.use(VueRouter)

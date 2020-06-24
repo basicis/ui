@@ -1,7 +1,7 @@
 
 //ui-navbar
 .ui-navbar{
-    @extend .col, .col-lg-9, .offset-lg-3;
+    @extend .col;
     position: relative !important;
     background-color: $white;
     width: 100% ;

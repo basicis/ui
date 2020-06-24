@@ -1,4 +1,4 @@
-import DashboardLayout from './components/layout/DashboardLayout'
+import UI from './components/layout/UI'
 import Home from './components/Home'
 
 let router = {
@@ -15,7 +15,15 @@ let router = {
             props: {
                 page: 'login'
             },
-            component: DashboardLayout,
+            component: UI,
+        },
+
+        {
+            path: "/form",
+            props: {
+                page: 'form'
+            },
+            component: UI,
         },
 
         {
@@ -24,7 +32,7 @@ let router = {
             props: {
                 page: 'dashboard'
             },
-            component: DashboardLayout,
+            component: UI,
         },
     ]
 }

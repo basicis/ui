@@ -7,7 +7,7 @@
         <div class="ui-navbar-header-left">
             
             <ul>
-                <li class="ui-sidebar-toggle" > <fontawesome  icon="bars" /> </li>
+                <li @click="toggleSideBar" class="ui-sidebar-toggle" > <fontawesome  icon="bars" /> </li>
                 <li v-for="(item, key) in menuLeft" v-bind:key="key" class="item" > <a v-bind:href="item.link">{{item.text}}</a></li>
             </ul>
 
@@ -70,7 +70,8 @@ export default {
     },
     methods:{
         toggleSideBar(){
-
+            this.width = 75
+            this.$emit('toggleSideBar')
         },
     }
 }

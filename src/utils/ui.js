@@ -37,13 +37,23 @@ let normalizeLayout = function(){
     if( sidebar.is(":visible") ){  
 
         if( screenWidthLarge() | screenWidthXLarge()  ) {
-            $(".ui-dashboard-right").css('width', '75%' )
+            //$(".ui-dashboard-right").css('width', '75%' )
+            $(".ui-main").addClass('col-lg-9')
+            $(".ui-main").addClass('offset-lg-3')
+            $(".ui-navbar").addClass('col-lg-9')
+            $(".ui-navbar").addClass('offset-lg-3')
+            sidebar.addClass('col-lg-3')
         }else{
             $(".ui-dashboard-right").css('width', '100%' )
         }
         
     }else{
-        $(".ui-dashboard-right").css('width', '100%' )
+        //$(".ui-dashboard-right").css('width', '100%' )
+        $(".ui-main").addClass('col-lg-9')
+        $(".ui-main").addClass('offset-lg-3')
+        $(".ui-navbar").addClass('col-lg-9')
+        $(".ui-navbar").addClass('offset-lg-3')
+        sidebar.removeClass('col-lg-3')
     }
 
 }

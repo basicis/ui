@@ -1,5 +1,5 @@
 .ui-sidebar {
-    @extend .col, .col-lg-3;
+    @extend .col-10, .col-md-6, .col-lg-3;
     padding: 0 !important;
     position: fixed;
     top: 0;
@@ -7,19 +7,11 @@
     z-index: 100 !important;
     background: $light2;
     height: 100vh !important;
-    //width: 300px;
+    transition: display cubic-bezier(0.6, -0.28, 0.735, 0.045) .8s !important;
 
     & , & > * {
         user-select: none !important;
     }
-
-
-    @media screen and (min-width: $lg) {
-        //position: relative !important;
-        //height: 100vh !important;
-        //width: 25% !important;
-    }
-
 
     .ui-brand{
         display: flex !important;

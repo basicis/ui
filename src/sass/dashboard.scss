@@ -47,8 +47,9 @@
 
 
 .ui-main{
-    @extend .col, .col-lg-9, .offset-lg-3;
-    height: calc(100vh - 80px) !important;
+    @extend .col;
+    min-height: calc(100vh - 180px) !important;
+    max-height: calc(100vh - 180px) !important;
     width: 100vw !important;
     background: #ccc;
     overflow-y: scroll !important;
